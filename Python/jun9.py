@@ -40,13 +40,14 @@ print("final answer =", final_answer)
 
 # Create a function 'average_of_3' that prints average of 3 numbers. Write a main program that asks 3 numbers from user and print their average using that function.
 
-a = int(input("a: "))
-b = int(input("b: "))
-sum_of_squares(a, b)
-
-
 def sum_of_squares(a, b):
     print("sum of squares =", (a ** 2) + (b ** 2))
+
+a = int(input("a: "))
+b = int(input("b: "))
+
+sum_of_squares(a, b)
+
 
 """
 Create a function that returns sum of squares of two numbers given in its argument. Write a main program that takes four numbers from user & print division of sum of squares of first two numbers by sum of squares of last two numbers using the created function.
