@@ -84,5 +84,3 @@ print(s1[ : ])
 
 print(s1[20 : 20])
 print(s1[6 : 100 : 2])
-
-# lets end session
