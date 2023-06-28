@@ -86,6 +86,9 @@ print(avg(10, 20))
 # We can convert a function to a lambda function only if it is a 'one-liner' function
 
 # map
+"""
+from sys import getsizeof
+
 def factorial(a):
     f = 1
     for i in range(1, a+1):
@@ -93,5 +96,68 @@ def factorial(a):
     return f
 
 # print(factorial(5))
-num = [2, 4, 5, 8, 9, 6]
-num_fact
+num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+num_fact = []
+for i in num:
+    num_fact.append(factorial(i))
+
+# print(num_fact)
+print(getsizeof(num_fact))
+
+num_fact_object = map(factorial, num)
+# print(num_fact_object)
+print(getsizeof(num_fact_object))
+"""
+
+# filter
+'''
+def avg(n):
+    return sum(n)/len(n)
+
+temperatures = [-20, -18, -13, -15, 0, 4, -12, -15, -16, 3, -2, 0, 5]
+avg_temp = round(avg(temperatures))
+# print(avg_temp)
+
+def aboveAvgTemp(x):
+    return x > avg_temp
+
+# print(aboveAvgTemp(0))
+# Write a program that creates a new list of all temperature points which are above avg_temp using 'aboveAvgTemp()' function
+
+# Your code goes here
+"""
+high_temp_points = []
+for i in temperatures:  # i = -20, -18, -13, -15, 0, 4, -12, -15, -16, 3, -2, 0, 5
+    if aboveAvgTemp(i):
+        high_temp_points.append(i)
+"""
+
+high_temp_points = list(filter(aboveAvgTemp, temperatures))
+print(high_temp_points)
+'''
+
+# reduce
+'''
+from functools import reduce
+
+transactions = [250, -25, -500, 100, -300, 650, 775, -200, -150, 350]
+"""
+sum = 0
+for i in transactions:
+    sum = sum + abs(i)
+print(sum)
+"""
+
+def absoluteAddition(a, b):
+    return abs(a) + abs(b)
+"""
+sum = absoluteAddition(transactions[0], transactions[1])
+for i in range(2, len(transactions)):
+    sum = absoluteAddition(sum, transactions[i])
+"""
+sum = reduce(absoluteAddition, transactions)
+print(sum)
+'''
+
+# Organizing our code in modules & packages
