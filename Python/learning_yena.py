@@ -29,7 +29,7 @@ engine.setProperty('voice', voices[1].id)   #changing index, changes voices. 1 f
 engine.say("Hello Nency & Yesha")
 engine.runAndWait()
 """
-
+"""
 import speech_recognition as sr
 
 def takeCommand():
@@ -47,3 +47,17 @@ def takeCommand():
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
     return command
+"""
+from AppOpener import open, close, give_appnames
+
+apps = give_appnames()
+application = input("App name: ")
+appList = []
+for app in apps:
+    if application in app:
+        appList.append(app)
+print(appList)
+if len(appList) > 1:
+    for x in appList:
+        print(x)
+    final_app = input("Which one do you want to open?\n")

@@ -3,7 +3,11 @@ from datetime import datetime
 import speech_recognition as sr
 from googlesearch import search
 import wikipedia
-from google import google
+import webbrowser
+# from google import google
+import os
+from AppOpener import open, close, give_appnames
+
 
 BOSS = "Nency & Yesha"
 
@@ -64,6 +68,7 @@ while True:
     if command.startswith('what') or command.startswith('where') or command.startswith('which') or command.startswith('who') or command.startswith('when') or command.startswith('how'):
         
         # what is the capital of India?
+        """
         results = google.search(command, 1)
         speak('wait, let me think...')
         for result in result:
@@ -82,5 +87,49 @@ while True:
         info = wikipedia.summary(term, sentences = 2)
         print(info)
         speak(info)
-        """
+        
+
+    if "youtube" in command:
+        url = "https://youtube.com"
+        webbrowser.open(url)
+
+    if "open" in command and ".com" not in command:
+        pass
+
+    if "." in command:
+        terms = command.split()
+        for term in terms:
+            if "." in term:
+                website = term
+                break
+        if "https" not in term:
+            url = "https://" + website
+        webbrowser.open(url)
+        
+
+    if "vs code" in command or "visual studio code" in command:
+        # print("if exectued for command:", command)
+        path = "C:\\Users\\Alakh Pandya\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+        os.startfile(path)
+
+    if "application" in command:
+        terms = command.split()
+        for i in range(1, len(terms)):
+            if "application" in terms[i]:
+                term = terms[i-1]
+        apps = give_appnames()
+        appList = []
+        for app in apps:
+            if term in app:
+                appList.append(app)
+        # print(appList)
+        if len(appList) > 1:
+            for application in appList:
+                print(application)
+
+            print("Which one do you want to open?\n")
+            speak(f"There are {len(appList)} apps matching your choice. Which one do you want to open?\n")
+            final_app = takeCommand()
+        open(final_app)
+
 speak("Good bye" + BOSS)
