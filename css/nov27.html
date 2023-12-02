@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        border: solid 4px black;
+        height: 100vh;
+        /* background-image: linear-gradient(to right, #4291e0, #0be193); */
+        /* background-image: linear-gradient(to left, #4291e0, #0be193); */
+        /* background-image: linear-gradient(to top, #4291e0, #0be193); */
+        /* background-image: linear-gradient(to bottom, #4291e0, #0be193); */
+        /* background-image: linear-gradient(to top left, #4291e0, rgb(66, 224, 211), #0be193); */
+        /* background-image: linear-gradient(to left, #4291e0, rgb(66, 224, 211), #0be193); */
+        /* background: linear-gradient(to left, #4291e0, #4291e0, #0be193); */
+
+        /* background: radial-gradient(#4291e0, #0be193); */
+        background-image: linear-gradient(to right bottom, #37051a, #7a2423, #ae5a11, #c29f00, #a8eb12);
+    }
+
+    .external{
+        margin: auto;       /* To get the div in the center */
+
+        border: white solid;
+        height: 450px;
+        width: 1000px;
+    }
+    .internal{
+        margin: auto;
+        border: white solid;
+        height: 250px;
+        width: 700px;
+    }
+
+    .box{
+        border: solid black;
+        width: fit-content;
+        display: inline;
+    }
+
+    a{
+        /* display: block; */
+        display: inline-block;
+        border: solid;
+        width: 400px;
+        height: 100px;
+    }
+</style>
+<body>
+    <br><br><br><br><br>
+    <div class="external">
+        <br><br><br><br>
+        <div class="internal">
+            <div class="box" id="item1">Static</div>
+            <div class="box" id="item2">Relative</div>
+            <a href="#">Link 1</a>
+            <div class="box" id="item3">Absolute</div>
+            <div class="box" id="item4">Fixed</div>
+            <div class="box" id="item5">Sticky</div>
+            <!-- <div class="box" id="item6"></div> -->
+        </div>
+    </div>
+</body>
+</html>
